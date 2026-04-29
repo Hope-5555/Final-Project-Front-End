@@ -4,13 +4,24 @@
   margin: 0;
 }
 
+body {
+  overflow-x: hidden;
+  background-color: rgb(230, 230, 233);
+}
+
 /* Navigation Styling */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  box-shadow: 0 10px 10px gray;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 4px;
+  right: 0;
+  left: 0;
 }
 
 header h1 {
@@ -46,4 +57,58 @@ nav ul li:hover {
 #login-btn:hover {
   border-radius: 5px 15px;
   background-color: transparent;
+}
+
+/* Hamburger and close buttons Section */
+#hamburger {
+  display: none;
+}
+
+#close-btn {
+  display: none;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  /* Navigation Section */
+  header {
+    width: 100%;
+    position: relative;
+    justify-content: space-around;
+    padding-bottom: 25px;
+  }
+
+  header h1 {
+    font-size: 25px;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    padding: 25px;
+    position: absolute;
+    right: 45px;
+    top: 70px;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(40px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+  }
+
+  #login-btn {
+    display: none;
+  }
+
+  #hamburger {
+    display: block;
+    font-size: 25px;
+  }
+
+  #close-btn {
+    display: block;
+    font-size: 25px;
+    margin: 20px auto;
+  }
 }
