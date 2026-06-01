@@ -736,4 +736,9 @@ label,
   .sub-form {
     width: 60%;
   }
+
+  .skul {
+    height: 360px;
+    padding: 20px;
+  }
 }
