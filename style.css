@@ -6,7 +6,43 @@
 
 body {
   overflow-x: hidden;
-  background-color: rgb(230, 230, 233);
+  /* background-color: rgb(230, 230, 233); */
+  background:
+    linear-gradient(rgba(230, 230, 233, 0.9), rgba(230, 230, 233, 0.9)),
+    url("images/form-bg.jpg") center no-repeat;
+  background-size: cover;
+  scroll-behavior: smooth;
+}
+
+/* Global Styling */
+:root {
+  --primary-color: blue;
+  --secondary-color: rgb(79, 73, 73);
+  --bgColor: rgba(230, 230, 233, 0.026);
+  --bgColor2: rgb(216, 216, 221);
+}
+
+button {
+  cursor: pointer;
+}
+
+button:active {
+  opacity: 0.4;
+}
+
+/* floating icons */
+.floating-hand {
+  width: 100px;
+  position: absolute;
+  top: 270px;
+  left: 50px;
+  animation: float 3s infinite alternate;
+}
+
+@keyframes float {
+  to {
+    transform: translatey(10px);
+  }
 }
 
 /* Navigation Styling */
@@ -15,19 +51,24 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(20px);
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
   position: fixed;
-  top: 4px;
+  top: 0;
   right: 0;
   left: 0;
+  z-index: 100;
+}
+
+header.show-on-scroll {
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 header h1 {
-  color: cyan;
-  text-shadow: 2px 2px 5px black;
+  color: blue;
+  text-shadow: 0 3px 5px rgba(0, 0, 0, 0.7);
   cursor: pointer;
+  margin-right: 10px;
 }
 
 nav ul {
@@ -35,6 +76,32 @@ nav ul {
   gap: 45px;
   list-style: none;
 }
+
+nav ul li {
+  list-style: none;
+  position: relative;
+}
+
+nav ul li::after {
+  content: "";
+  width: 0%;
+  height: 5px;
+  position: absolute;
+  left: 0;
+  top: 110%;
+  background-color: blue;
+  border-radius: 15px;
+  transition: 0.6s;
+}
+
+nav ul li:hover::after {
+  width: 100%;
+}
+
+nav ul li.active::after {
+  width: 100%;
+}
+
 nav ul li a {
   font-size: 20px;
   color: black;
@@ -42,15 +109,17 @@ nav ul li a {
   cursor: pointer;
 }
 
-nav ul li:hover {
+/* nav ul li:hover {
   opacity: 0.4;
-}
+} */
 
 #login-btn {
   padding: 15px;
+  margin-left: 2px;
   font-weight: bold;
   border-radius: 15px 5px;
   transition: 0.45s ease;
+  border: 3px solid rgba(0, 0, 255, 0.7);
   cursor: pointer;
 }
 
@@ -67,13 +136,517 @@ nav ul li:hover {
 #close-btn {
   display: none;
 }
+/* End */
+
+/* Hero Section */
+#hero {
+  text-align: center;
+  padding: 25px;
+  margin: 200px auto 0 auto;
+}
+
+#hero h1 {
+  color: var(--primary-color);
+  padding: 20px;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+#hero h3 {
+  color: var(--secondary-color);
+  line-height: 2;
+  margin-bottom: 25px;
+}
+
+#hero button {
+  color: white;
+  font-weight: bold;
+  padding: 15px 30px;
+  margin: 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+#browse-skul {
+  background-color: green;
+}
+
+#get-strt {
+  background-color: rgb(26, 26, 186);
+}
+
+#browse-skul:hover {
+  color: black;
+  border: 1px solid green;
+  background-color: transparent;
+}
+
+#get-strt:hover {
+  color: black;
+  border: 1px solid rgb(26, 26, 186);
+  background-color: transparent;
+}
+
+#browse-skul:hover,
+#get-strt:hover {
+  box-shadow: 0 0 10px black;
+}
+
+/* Blog Secton */
+#blogs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: var(--bgColor2);
+}
+
+#blogs .box {
+  width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: var(--bgColor);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+#blogs .box h2 {
+  color: var(--primary-color);
+  padding: 10px;
+}
+/* End */
+
+/* Footer Section */
+footer {
+  padding: 50px;
+  text-align: center;
+  background-color: rgba(198, 192, 192, 0.9);
+}
+
+footer p {
+  color: var(--secondary-color);
+}
+
+/* Schools Section */
+#schools {
+  margin-top: 90px;
+  padding: 50px;
+}
+
+#schools h1 {
+  text-align: center;
+  margin: 40px;
+  color: var(--primary-color);
+}
+
+.skuls-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 30px;
+  margin-bottom: 200px;
+}
+
+.skul {
+  width: 400px;
+  height: 280px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: var(--bgColor);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s ease;
+}
+
+#schools img {
+  width: 40px;
+  height: 40px;
+}
+
+.skul h2 {
+  margin: 10px 0;
+  color: var(--primary-color);
+}
+
+.skul:hover {
+  scale: 1.1;
+}
+
+.form-btn {
+  padding: 15px;
+  font-weight: bold;
+  margin: 20px auto;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  transition: all 0.5s ease;
+}
+
+.form-btn:hover {
+  border: 2px solid white;
+  background-color: transparent;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+/* End */
+
+/* About Section */
+#about {
+  margin-top: 70px;
+  padding: 50px;
+  /* background-color: var(--bgColor2); */
+}
+
+#about h1 {
+  text-align: center;
+  margin-bottom: 70px;
+  color: var(--primary-color);
+}
+
+#about p {
+  font-size: 20px;
+  color: rgb(85, 84, 84);
+  margin: 20px;
+}
+
+#about p + h1 {
+  margin-top: 100px;
+}
+
+.our-core-value {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+
+.about-core {
+  width: 400px;
+  padding: 20px;
+  background-color: rgb(206, 202, 202);
+}
+
+.about-core h3 {
+  color: rgb(32, 43, 119);
+}
+
+/* Registration Section */
+#admission {
+  margin-top: 100px;
+  padding: 30px;
+}
+
+#admission h1,
+#admission h2 {
+  text-align: center;
+  color: var(--primary-color);
+  margin: 15px 20px;
+}
+
+#admission span {
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 24px;
+}
+
+#admission ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#admission ul li {
+  margin: 10px;
+  font-size: 20px;
+}
+
+#r-form {
+  text-align: center;
+  margin-bottom: 100px;
+  color: var(--primary-color);
+  box-shadow: 0 0 5px gray;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+}
+
+.sub-form {
+  width: 600px;
+  height: 550px;
+  padding: 30px;
+  margin-bottom: 60px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  background-color: rgb(243, 250, 250);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  transition: all 0.45s ease;
+}
+
+.sub-form h1,
+#form5 h1 {
+  color: var(--primary-color);
+  margin: 15px;
+  text-align: center;
+}
+
+.sub-form input {
+  width: 70%;
+  display: block;
+  padding: 15px;
+  font-size: 15px;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s ease;
+}
+
+form input::placeholder {
+  color: rgb(91, 89, 89);
+  font-size: 15px;
+}
+
+form input:focus,
+.send-message input:focus,
+.send-message textarea:focus {
+  border: 4px solid rgb(36, 36, 171);
+  scale: 1.1;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+}
+
+select {
+  width: 70%;
+  padding: 15px;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 5px gray;
+  border-radius: 8px;
+}
+
+.next-btn {
+  width: 200px;
+  padding: 15px;
+  margin-top: 20px;
+  color: white;
+  border: 4px solid white;
+  border-radius: 25px;
+  background-color: rgba(0, 0, 255, 0.7);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.sub-form.show {
+  display: flex;
+}
+
+#small-box {
+  width: 200px;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: var(--bgColor);
+}
+
+#small-box span {
+  font-size: 15px;
+  color: rgb(56, 54, 54);
+}
+
+/* Final payment */
+
+#form5 h3 {
+  color: rgba(0, 0, 0, 0.6);
+  background-color: rgb(204, 202, 202);
+  padding: 10px;
+  width: 400px;
+}
+
+#form5 h3 span {
+  padding-left: 200px;
+}
+
+#moneybox {
+  padding: 25px;
+  display: flex;
+  gap: 20px;
+}
+
+#orangeMoneyBox,
+#afriMoneyBox {
+  width: 100px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+#moneyNumber {
+  padding: 9px 20px;
+  border: none;
+  margin: 5px auto;
+}
+
+/* Contact Section */
+#contact {
+  margin-top: 100px;
+  padding: 40px;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.getInTouch,
+.send-message {
+  width: 500px;
+  height: 600px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+}
+
+#contact h1 {
+  margin: 20px;
+  color: var(--primary-color);
+}
+
+.getInTouch h3 {
+  margin: 15px;
+}
+
+.getInTouch p {
+  color: var(--secondary-color);
+  line-height: 2;
+  text-align: center;
+}
+
+.getInTouch p a {
+  text-decoration: none;
+}
+
+.getInTouch p a:hover {
+  text-decoration: underline;
+}
+
+.send-message input,
+textarea {
+  width: 70%;
+  padding: 20px;
+  margin: 10px;
+  font-size: 20px;
+  border: none;
+  background-color: transparent;
+  border-bottom: 5px solid blue;
+  border-radius: 10px;
+  outline: none;
+  transition: all 0.4s ease;
+}
+
+.send-message input::placeholder,
+.send-message textarea::placeholder {
+  font-size: 20px;
+}
+
+textarea {
+  resize: none;
+  height: 100px;
+}
+
+.send-message #send-btn {
+  width: 60%;
+  padding: 20px;
+  margin: 20px;
+  color: blue;
+  font-weight: bold;
+  border: none;
+  border-radius: 15px;
+  transition: 0.3s ease;
+}
+
+.send-message #send-btn:hover {
+  box-shadow: 0 10px 5px rgba(0, 0, 0, 0.4);
+}
+/* End */
+
+/* Login Section */
+#login {
+  margin-top: 120px;
+}
+
+#login h1 {
+  text-align: center;
+  color: var(--primary-color);
+}
+
+#login-container,
+#register-container {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  margin: 50px auto;
+  box-shadow: inset 0 0 10px gray;
+  border-radius: 15px;
+}
+
+#login-container {
+  display: none;
+}
+
+#login-container input,
+label,
+#register-container input {
+  width: 90%;
+  padding: 20px;
+  border: none;
+  outline: none;
+  border-radius: 25px;
+}
+
+#login-container input::placeholder,
+#register-container input::placeholder {
+  color: rgb(154, 154, 154);
+}
+
+.regi-btn {
+  width: 50%;
+  margin: 40px;
+  padding: 20px;
+  font-weight: bold;
+  border-radius: 15px;
+  transition: 0.5s;
+}
+
+.regi-btn:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+#login-form-btn,
+#register-form-btn {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+/* End */
 
 /* Responsiveness */
+
 @media (max-width: 768px) {
   /* Navigation Section */
   header {
     width: 100%;
-    position: relative;
     justify-content: space-around;
     padding-bottom: 25px;
   }
@@ -90,10 +663,10 @@ nav ul li:hover {
     position: absolute;
     right: 45px;
     top: 70px;
-    background-color: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(40px);
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3);
     z-index: 2;
   }
 
@@ -108,7 +681,59 @@ nav ul li:hover {
 
   #close-btn {
     display: block;
-    font-size: 25px;
+    font-size: 30px;
     margin: 20px auto;
+  }
+  /* End */
+
+  /* Hero Section */
+  .floating-hand {
+    top: 270px;
+    left: 30px;
+    z-index: -99;
+  }
+
+  #hero h1,
+  #hero h3 {
+    margin: 4px auto;
+  }
+
+  /* Blog Section */
+  #blogs .box {
+    text-align: center;
+  }
+
+  #blogs .box p {
+    padding: 5px;
+  }
+  /* End */
+
+  /* School Section */
+  #schools {
+    margin-top: 75px;
+  }
+
+  #form5 {
+    padding: 50px;
+    align-items: center;
+    width: 90%;
+  }
+
+  #form5 h3 {
+    padding: 10px;
+    width: 100%;
+  }
+
+  #form5 h3 span {
+    padding-left: 150px;
+  }
+
+  /* Register Section */
+  form {
+    align-items: center;
+  }
+
+  .sub-form {
+    width: 60%;
   }
 }

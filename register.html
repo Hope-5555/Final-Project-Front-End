@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Final Project</title>
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Awesome Font -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- Navigation Section -->
+    <header>
+      <h1>Amoson<span id="logo">Forms</span></h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="school.html">School</a></li>
+          <li><a href="university.html">University</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <i class="fa fa-times" id="close-btn" aria-hidden="true"></i>
+        </ul>
+        <i class="fa fa-bars" id="hamburger" aria-hidden="true"></i>
+      </nav>
+      <a href="loginReg.html"><button id="login-btn">Login</button></a>
+    </header>
+
+    <!--Admission and Avaliable Section -->
+    <section id="admission">
+      <h1>Admission Requirements</h1>
+      <ul>
+        <li>BECE result</li>
+        <li>A valid national identification card or passport.</li>
+        <li>Two passport-sized photographs.</li>
+        <li>Application fee payment confirmation.</li>
+        <li>School passing mark aggregate <span>15</span></li>
+        <li>WASSCE passing mark <span>5</span> credits</li>
+      </ul>
+
+      <h2>Streams</h2>
+      <ul>
+        <li>Commercial</li>
+        <li>Art</li>
+        <li>Science</li>
+      </ul>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="register">
+      <h1 id="r-form">Registration Form</h1>
+      <form id="">
+        <div class="sub-form show" id="form1">
+          <!-- Personal -->
+          <h1>Personal Information</h1>
+          <input type="text" class="pInput" placeholder="First Name" />
+          <input type="text" class="pInput2" placeholder="Last Name" />
+          <input type="text" class="pInput3" placeholder="Date of Birth" />
+          <input type="text" class="pInput4" placeholder="Address" />
+          <button class="next-btn" id="btn1">Next Step</button>
+        </div>
+
+        <!-- Academic -->
+        <div class="sub-form" id="form2">
+          <h1>Academic Background</h1>
+          <input
+            type="text"
+            class="aInput"
+            placeholder="Last School Attended"
+          />
+          <input type="text" class="aInput2" placeholder="Year of BECE" />
+          <input type="text" class="aInput3" placeholder="Exam Index Number" />
+          <button class="next-btn" id="btn2">Next Step</button>
+        </div>
+
+        <!-- STREAMS -->
+        <div class="sub-form" id="form3">
+          <h1>STREAMS SELECTION</h1>
+
+          <p>Primary Choice of Stream</p>
+          <select>
+            <option>Seclect Stream</option>
+            <option>Commercial</option>
+            <option>Art</option>
+            <option>Science</option>
+          </select>
+
+          <p>Scondary Choice of Stream</p>
+          <select>
+            <option>Seclect Stream</option>
+            <option>Commercial</option>
+            <option>Art</option>
+            <option>Science</option>
+          </select>
+          <button class="next-btn" id="btn3">Next Step</button>
+        </div>
+
+        <!-- Payment -->
+        <div class="sub-form" id="form4">
+          <h1>Review & Submit</h1>
+          <p>
+            Please review your information carefully. After submission, you will
+            be redirected to the secure payment page to pay the application fee
+            of SLE 300.00.
+          </p>
+
+          <div id="small-box">
+            <h3>School: <span>Albert Academy</span></h3>
+            <h3>Fee: <span>SLE 300.00 </span></h3>
+          </div>
+          <button class="next-btn" id="btn4">Proceed to Payment</button>
+        </div>
+        <!-- payment cotinue -->
+        <div class="sub-form" id="form5">
+          <h1>Secure Checkout</h1>
+          <p>Choose your preferred mobile money provider.</p>
+
+          <h3>Total Due: <span>SLE 200.00</span></h3>
+
+          <div id="moneybox">
+            <div id="orangeMoneyBox">
+              <h2>Orange Money</h2>
+            </div>
+
+            <div id="afriMoneyBox">
+              <h2>Afri Money</h2>
+            </div>
+          </div>
+
+          <h3>Mobile Number</h3>
+          <input type="number" id="moneyNumber" placeholder="+232 23****" />
+
+          <p>
+            * You will receive a prompt on your phone to enter your PIN and
+            authorize this transaction.
+          </p>
+          <button class="next-btn" type="submit" id="btn5">Pay Now</button>
+        </div>
+      </form>
+    </section>
+
+    <footer>
+      <p>&copy 2026 AmosonForms. All right Reserved</p>
+    </footer>
+  </body>
+  <script src="script.js"></script>
+</html>

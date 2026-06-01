@@ -17,16 +17,12 @@
     />
   </head>
   <body>
-    <!-- Floating icons -->
-    <img src="images/holding-pen.png" alt="" class="floating-hand" />
-
-    <!-- <img src="images/holding-pen (2).png" alt="" class="floating-hand" /> -->
     <!-- Navigation Section -->
     <header>
       <h1>Amoson<span id="logo">Forms</span></h1>
       <nav>
         <ul>
-          <li class="active"><a href="#">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="school.html">School</a></li>
           <li><a href="university.html">University</a></li>
           <li><a href="about.html">About</a></li>
@@ -38,42 +34,49 @@
       <a href="loginReg.html"><button id="login-btn">Login</button></a>
     </header>
 
-    <!-- Hero Section -->
-    <section id="hero">
-      <h1>Apply for Schools Easily in Sierra Leone</h1>
+    <!-- Login  Section -->
+    <section id="login">
+      <form action="#" id="register-container">
+        <h1>Register Form</h1>
+        <label for="fname"> First Name: </label>
+        <input type="text" placeholder="Amos" />
 
-      <h3>
-        AmosonForms is the centralized platform to purchase application forms
-        and apply to your dream school or university online.
-      </h3>
+        <label for="fname"> Last Name: </label>
+        <input type="text" placeholder="Kamara" />
 
-      <button id="browse-skul">Browse Schools</button>
-      <a href="register.html"><button id="get-strt">Get Started</button></a>
-    </section>
+        <label for="fname"> Phone Number: </label>
+        <input type="text" placeholder="+232 123456" />
 
-    <!-- Blog Section -->
-    <section id="blogs">
-      <div class="box">
-        <h2>Easy Application</h2>
+        <label for="fname"> Gmail: </label>
+        <input type="mail" placeholder="kamara@gmail.com" />
+
+        <label for="fname"> Password: </label>
+        <input type="password" placeholder="123******" />
+
+        <button class="regi-btn">Register</button>
         <p>
-          Fill out forms online with step-by-step guidance. No more long queues.
+          Already have an account
+          <span type="button" id="login-form-btn">Login</span>
         </p>
-      </div>
+      </form>
 
-      <div class="box">
-        <h2>Secure Payments</h2>
-        <p>
-          Pay safely using Orange Money or Afri Money from the comfort of your
-          home.
-        </p>
-      </div>
+      <form action="#" id="login-container">
+        <h1>Login</h1>
+        <label for="fname"> Name: </label>
+        <input type="text" placeholder="Amos" />
 
-      <div class="box">
-        <h2>Track Progress</h2>
+        <label for="fname"> Last Name: </label>
+        <input type="text" placeholder="Kamara" />
+
+        <label for="fname"> Password: </label>
+        <input type="password" placeholder="123******" />
+
+        <button class="regi-btn">Login</button>
         <p>
-          Get real-time updates and notifications on your application status.
+          Didn't have an account?
+          <span id="register-form-btn">Register here</span>
         </p>
-      </div>
+      </form>
     </section>
 
     <footer>
